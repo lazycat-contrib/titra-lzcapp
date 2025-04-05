@@ -1,0 +1,38 @@
+{
+  "name": "titra",
+  "package": "cloud.lazycat.app.titra",
+  "description": "面向自由职业者和小型团队的现代开源项目时间跟踪工具",
+  "homepage": "https://github.com/kromitgmbh/titra",
+  "author": "kromitgmbh",
+  "app_features": [
+    "background_task",
+    "public_path"
+  ],
+  "subdomain": "titra",
+  "version": "0.99.30",
+  "public_paths": [
+    "/"
+  ],
+  "iconPath": "icon.png",
+  "composePath": "docker-compose.yml",
+  "unsupported_platforms": [],
+  "lastRouteType": "from_compose",
+  "port_mappings": {
+    "titra_3000_3000": {
+      "use": true,
+      "type": "http",
+      "path": "/",
+      "targetPath": "/"
+    }
+  },
+  "image_kromit_titra": {
+    "originalImage": "kromit/titra",
+    "pushTarget": "none"
+  },
+  "image_mongo_7.0": {
+    "originalImage": "mongo:7.0",
+    "pushTarget": "none"
+  },
+  "mongodb_volume_titra_db_volume_/data/db_action": "emptyDir",
+  "mongodb_volume_/data/db_location": "app_data"
+}
