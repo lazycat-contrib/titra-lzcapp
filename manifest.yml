@@ -19,6 +19,7 @@ application:
 services:
   titra_app:
     container_name: titra_app
+    # romit/titra:0.99.30
     image: docker.hlmirror.com/kromit/titra:0.99.30
     environment:
       - ROOT_URL=https://${LAZYCAT_APP_DOMAIN}
