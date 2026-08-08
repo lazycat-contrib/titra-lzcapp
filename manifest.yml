@@ -1,10 +1,3 @@
-lzc-sdk-version: "0.1"
-name: titra
-package: cloud.lazycat.app.titra
-version: 0.99.30
-description: 面向自由职业者和小型团队的现代开源项目时间跟踪工具
-homepage: https://github.com/kromitgmbh/titra
-author: kromitgmbh
 application:
   subdomain: titra
   background_task: true
@@ -18,8 +11,7 @@ application:
     - /=http://titra_app:3000/
 services:
   titra_app:
-    container_name: titra_app
-    # romit/titra:0.99.30
+    # upstream: docker.io/kromit/titra:0.99.30
     image: docker.hlmirror.com/kromit/titra:0.99.30
     environment:
       - ROOT_URL=https://${LAZYCAT_APP_DOMAIN}
@@ -29,13 +21,13 @@ services:
       - titra_db
       
   titra_db:
-    container_name: titra_db
+    # upstream: docker.io/library/mongo:7.0
     image: docker.hlmirror.com/mongo:7.0
     environment:
       - MONGO_DB=titra
     binds:
       - /lzcapp/var/db:/data/db
-    health_check:
+    healthcheck:
        test:
         - CMD-SHELL
         - mongosh --eval  "db.adminCommand('ping')"
