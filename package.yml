@@ -1,5 +1,5 @@
 package: cloud.lazycat.app.titra
-version: 0.99.30
+version: 1.0.10
 name: titra
 description: 面向自由职业者和小型团队的现代开源项目时间跟踪工具
 homepage: https://github.com/kromitgmbh/titra
