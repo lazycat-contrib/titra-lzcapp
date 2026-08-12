@@ -20,8 +20,8 @@ services:
     depends_on:
       - titra_db
   titra_db:
-    # upstream: docker.io/library/mongo:7.0.39
-    image: registry.lazycat.cloud/czyt/library/mongo:11cdb2ee5b4aafa7
+    # upstream: docker.io/library/mongo:7.0.40
+    image: registry.lazycat.cloud/czyt/library/mongo:914bb661618ecbeb
     environment:
       - MONGO_DB=titra
     binds:
