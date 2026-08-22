@@ -11,8 +11,8 @@ application:
     - /=http://titra_app:3000/
 services:
   titra_app:
-    # upstream: docker.io/kromit/titra:v1.0.10
-    image: registry.lazycat.cloud/czyt/kromit/titra:5f3a8481cf3734f7
+    # upstream: docker.io/kromit/titra:v1.0.12
+    image: registry.lazycat.cloud/czyt/kromit/titra:d0fe25301311a409
     environment:
       - ROOT_URL=https://${LAZYCAT_APP_DOMAIN}
       - MONGO_URL=mongodb://titra_db/titra?directConnection=true
